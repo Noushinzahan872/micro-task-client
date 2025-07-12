@@ -1,0 +1,75 @@
+// import { useEffect, useState } from "react";
+// import { useNavigate } from "react-router";
+
+
+// const TaskList = () => {
+//   const [tasks, setTasks] = useState([]);
+//   const navigate = useNavigate();
+
+//   useEffect(() => {
+//     fetch("http://localhost:3000/tasks/available")
+//       .then((res) => res.json())
+//       .then((data) => setTasks(data));
+//   }, []);
+
+//   return (
+//     <div className="p-4 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+//       {tasks.map((task) => (
+//         <div key={task._id} className="bg-white p-6 rounded-xl shadow">
+//           <h3 className="text-xl font-bold mb-2">{task.task_title}</h3>
+//           <p className="text-gray-600">Buyer: {task.buyer_name}</p>
+//           <p>Pay: {task.payable_amount} coins</p>
+//           <p>Deadline: {task.completion_date}</p>
+//           <p>Needed: {task.required_workers} workers</p>
+//           <button
+//             className="btn btn-sm btn-info mt-3"
+//             onClick={() => navigate(`/dashboard/tasks/${task._id}`)}
+//           >
+//             View Details
+//           </button>
+//         </div>
+//       ))}
+//     </div>
+//   );
+// };
+
+// export default TaskList;
+
+
+
+
+import { useEffect, useState } from "react";
+import { Link } from "react-router";
+
+
+const TaskList = () => {
+  const [tasks, setTasks] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:3000/tasks/available")
+      .then((res) => res.json())
+      .then((data) => setTasks(data));
+  }, []);
+
+  return (
+    <div className="p-4 max-w-6xl mx-auto">
+      <h2 className="text-2xl font-bold mb-6">Available Tasks</h2>
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {tasks.map((task) => (
+          <div key={task._id} className="bg-white p-4 rounded-xl shadow">
+            <h3 className="text-lg font-semibold">{task.task_title}</h3>
+            <p className="text-sm text-gray-600">Buyer: {task.buyer_name}</p>
+            <p className="text-sm">Pay: {task.payable_amount} coins</p>
+            <p className="text-sm">Deadline: {task.completion_date}</p>
+            <p className="text-sm">Need: {task.required_workers} workers</p>
+            <Link to={`/dashboard/task/${task._id}`}>
+              <button className="btn btn-sm btn-primary mt-3">View Details</button>
+            </Link>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default TaskList;

@@ -1,14 +1,3 @@
-// // const BuyerHome = () => {
-// //   return (
-// //     <div>
-// //       <h2 className="text-xl font-semibold mb-2">🛒 Buyer Dashboard</h2>
-// //       <p>This is your Buyer dashboard page.</p>
-// //     </div>
-// //   );
-// // };
-
-// // export default BuyerHome;
-
 
 
 

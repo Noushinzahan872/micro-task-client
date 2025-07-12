@@ -99,7 +99,7 @@ const MyTasks = () => {
 
       {/* Edit Modal */}
       {editTask && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center p-4">
+        <div className="fixed inset-0  bg-opacity-50 flex justify-center items-center p-4">
           <div className="bg-white p-6 rounded max-w-lg w-full space-y-4">
             <h2 className="text-xl font-semibold">Update Task</h2>
             <input
