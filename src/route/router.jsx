@@ -15,6 +15,9 @@ import TaskList from "../pages/dashboard/worker/TaskList";
 import TaskDetails from "../pages/dashboard/worker/TaskDetails";
 import MySubmissions from "../pages/dashboard/worker/MySubmissions";
 import Withdrawals from "../pages/dashboard/worker/Withdrawals";
+import ManageUsers from "../pages/dashboard/admin/ManageUsers";
+import ManageTasks from "../pages/dashboard/admin/ManageTasks";
+import WithdrawRequests from "../pages/dashboard/admin/WithdrawRequests";
 
  export const router = createBrowserRouter([
   {
@@ -91,13 +94,22 @@ import Withdrawals from "../pages/dashboard/worker/Withdrawals";
 
 
 
+      { path: "/dashboard/admin-home", element: <AdminHome /> },
+      {
+        path:"/dashboard/manage-users",
+        element:<ManageUsers></ManageUsers>
+      },
+      {
+        path:"/dashboard/manage-tasks",
+        element:<ManageTasks></ManageTasks>
+      },
+      {
+        path:"/dashboard/withdraw-requests",
+        element:<WithdrawRequests></WithdrawRequests>
+       
 
-
-
-
-      { path: "admin-home", element: <AdminHome /> },
-    //   { path: "my-submissions", element: <MySubmissions /> },
-      // more routes can be added here
+      }
+    
     ],
   },
 
