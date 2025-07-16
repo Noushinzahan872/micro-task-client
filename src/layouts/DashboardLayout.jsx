@@ -145,7 +145,7 @@ const DashboardLayout = () => {
         </aside>
 
         {/* Main Content */}
-        <main className="flex-1 p-4 pt-16 md:ml-64">
+        <main className="flex-1 p-4 pt-16 ">
           <Outlet />
         </main>
       </div>
