@@ -109,6 +109,7 @@ import useAuth from "../hooks/useAuth";
 
 import { FaBars } from "react-icons/fa";
 import { Link } from "react-router";
+import MicroTaskLogo from "./MicroTaskLogo";
 
 const Navbar = () => {
   const { user, logOut } = useAuth();
@@ -137,9 +138,7 @@ const Navbar = () => {
   return (
     <nav className="bg-blue-800 text-white shadow-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-        <Link to="/" className="text-2xl font-bold">
-          MicroTask
-        </Link>
+        <MicroTaskLogo></MicroTaskLogo>
 
         {/* Mobile menu button */}
         <div className="md:hidden">
