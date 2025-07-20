@@ -73,7 +73,7 @@ const MyTasks = () => {
         <p>No tasks found.</p>
       ) : (
         <table className="min-w-full bg-white shadow rounded">
-          <thead className="bg-gray-200">
+          <thead className="bg-blue-600">
             <tr>
               <th className="p-2">Title</th>
               <th className="p-2">Detail</th>
@@ -81,7 +81,7 @@ const MyTasks = () => {
               <th className="p-2">Actions</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className='text-black'>
             {tasks.map(task => (
               <tr key={task._id} className="border-b">
                 <td className="p-2">{task.task_title}</td>

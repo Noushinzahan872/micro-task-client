@@ -54,7 +54,7 @@ const ManageTasks = () => {
       <h2 className="text-2xl font-bold mb-4">Manage Tasks</h2>
 
       <table className="min-w-full border bg-white rounded shadow">
-        <thead className="bg-blue-800 text-white">
+        <thead className="bg-blue-600 text-white">
           <tr>
             <th className="p-2">Title</th>
             <th>Buyer</th>
@@ -64,7 +64,7 @@ const ManageTasks = () => {
             <th>Actions</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className="text-black">
           {tasks.length > 0 ? (
             tasks.map((t) => (
               <tr key={t._id} className="text-center border-t hover:bg-blue-50">

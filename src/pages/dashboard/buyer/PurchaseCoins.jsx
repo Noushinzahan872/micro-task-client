@@ -40,8 +40,8 @@ const PurchaseCoins = () => {
 
   return (
     <div className="max-w-3xl mx-auto py-10 px-4">
-      <h2 className="text-2xl font-bold mb-6">Purchase Coins (Dummy Payment)</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <h2 className="text-2xl font-bold mb-6 text-blue-600">Purchase Coins </h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-black">
         {[ 
           { coins: 10, amount: 1 },
           { coins: 150, amount: 10 },

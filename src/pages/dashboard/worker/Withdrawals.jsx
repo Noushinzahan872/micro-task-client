@@ -205,12 +205,12 @@ const Withdrawals = () => {
 
   return (
     <div className="p-4 max-w-2xl mx-auto">
-      <h2 className="text-2xl font-bold mb-6">Withdraw Earnings</h2>
+      <h2 className="text-2xl font-bold mb-6 text-blue-600">Withdraw Earnings</h2>
       <div className="bg-gray-100 p-4 rounded-lg mb-6">
-        <p>
+        <p className="text-black">
           <strong>Total Coins:</strong> {userData.coins || 0}
         </p>
-        <p>
+        <p className="text-black">
           <strong>Withdrawable Amount:</strong> ${((userData.coins || 0) / 20).toFixed(2)}
         </p>
       </div>
@@ -229,7 +229,7 @@ const Withdrawals = () => {
             />
           </div>
 
-          <div className="mb-4">
+          <div className="mb-4 text-black">
             <label className="block mb-1 font-semibold">Withdraw Amount ($)</label>
             <input
               type="number"

@@ -36,7 +36,7 @@ const AdminHome = () => {
 
 const StatCard = ({ title, value }) => (
   <div className="bg-white shadow rounded p-4 text-center border-l-4 border-blue-600">
-    <h3 className="text-lg font-semibold">{title}</h3>
+    <h3 className="text-lg font-semibold text-blue-600">{title}</h3>
     <p className="text-2xl mt-2 font-bold text-blue-800">{value}</p>
   </div>
 );

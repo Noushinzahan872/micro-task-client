@@ -31,14 +31,14 @@ const PaymentHistory = () => {
           <table className="min-w-full divide-y divide-gray-200">
             <thead className="bg-blue-600 text-white">
               <tr>
-                <th className="px-6 py-3 text-left text-sm font-semibold">#</th>
+                <th className="px-6 py-3 text-left text-sm font-semibold"></th>
                 <th className="px-6 py-3 text-left text-sm font-semibold">Transaction ID</th>
                 <th className="px-6 py-3 text-left text-sm font-semibold">Coins</th>
                 <th className="px-6 py-3 text-left text-sm font-semibold">Amount ($)</th>
                 <th className="px-6 py-3 text-left text-sm font-semibold">Date</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-gray-100">
+            <tbody className="divide-y divide-gray-100 text-black">
               {payments.map((payment, index) => (
                 <tr key={payment._id} className="hover:bg-gray-50">
                   <td className="px-6 py-3 text-sm">{index + 1}</td>

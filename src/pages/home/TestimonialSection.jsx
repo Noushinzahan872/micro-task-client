@@ -31,7 +31,7 @@ const TestimonialSection = () => {
   return (
     <div className="py-16 bg-base-200">
       <div className="max-w-5xl mx-auto text-center px-4">
-        <h2 className="text-3xl font-bold mb-8 text-primary">What Our Users Say</h2>
+        <h2 className="text-3xl font-bold mb-8 text-blue-600">What Our Users Say</h2>
 
         <Swiper
           modules={[Pagination, Autoplay]}

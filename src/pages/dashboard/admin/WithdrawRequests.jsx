@@ -32,20 +32,19 @@ const WithdrawRequests = () => {
 
   return (
     <div className="p-4 overflow-x-auto">
-      <h2 className="text-2xl font-bold mb-4">Pending Withdraw Requests</h2>
+      <h2 className="text-2xl font-bold mb-4 text-blue-600">Pending Withdraw Requests</h2>
       <table className="min-w-full bg-white border rounded shadow">
-        <thead className="bg-blue-800 text-white">
+        <thead className="bg-blue-600 text-white">
           <tr>
             <th className="p-2">Name</th>
             <th>Email</th>
             <th>Coin</th>
             <th>Amount</th>
             <th>Method</th>
-            <th>Account</th>
             <th>Action</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className="text-black">
           {requests.map((req) => (
             <tr key={req._id} className="text-center border-t hover:bg-blue-50">
               <td>{req.worker_name}</td>
@@ -53,7 +52,6 @@ const WithdrawRequests = () => {
               <td>{req.withdrawal_coin}</td>
               <td>${req.withdrawal_amount}</td>
               <td>{req.payment_system}</td>
-              <td>{req.account}</td>
               <td>
                 <button
                   onClick={() => handleApprove(req._id)}

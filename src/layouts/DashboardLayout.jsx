@@ -133,7 +133,7 @@ const DashboardLayout = () => {
       <div className="flex">
         {/* Sidebar */}
         <aside
-          className={`fixed md:relative w-64 h-screen bg-blue-800 text-white z-30 transform transition-transform duration-300 ${
+          className={`fixed md:relative w-64 h-screen bg-blue-600 text-white z-30 transform transition-transform duration-300 ${
             isSidebarOpen ? "translate-x-0" : "-translate-x-full"
           } md:translate-x-0`}
         >

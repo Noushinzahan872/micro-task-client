@@ -245,10 +245,10 @@ const Sidebar = ({ sidebarOpen, toggleSidebar }) => {
 
       {/* Sidebar */}
       <aside
-        className={`fixed z-30 inset-y-0 left-0 w-64 bg-blue-800 text-white transform transition-transform duration-200 ease-in-out
+        className={`fixed z-30 inset-y-0 left-0 w-64 bg-blue-600 text-white transform transition-transform duration-200 ease-in-out
         ${sidebarOpen ? "translate-x-0" : "-translate-x-full"} md:translate-x-0 md:static md:block shadow-lg`}
       >
-        <div className="p-4 text-xl font-bold border-b border-blue-700 sticky top-0 bg-blue-800 z-10">
+        <div className="p-4 text-xl font-bold border-b border-blue-600 sticky top-0 bg-blue-600 z-10">
           MicroTask Dashboard
         </div>
 
@@ -259,7 +259,7 @@ const Sidebar = ({ sidebarOpen, toggleSidebar }) => {
                 key={item.name}
                 to={item.path}
                 onClick={toggleSidebar}
-                className="flex items-center gap-3 px-4 py-2 hover:bg-blue-600 hover:text-white rounded transition"
+                className="flex items-center gap-3 px-4 py-2 hover:bg-blue-800 hover:text-white rounded transition"
               >
                 <span className="text-lg">{item.icon}</span>
                 <span>{item.name}</span>

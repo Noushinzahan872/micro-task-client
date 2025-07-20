@@ -215,8 +215,8 @@ const AddTask = () => {
   };
 
   return (
-    <div className="max-w-3xl mx-auto bg-white shadow-md p-6 rounded">
-      <h2 className="text-2xl font-bold mb-4 text-center">Add New Task</h2>
+    <div className="max-w-3xl mx-auto shadow-md p-6 rounded">
+      <h2 className="text-2xl font-bold mb-4 text-center text-blue-600">Add New Task</h2>
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
         <input {...register("task_title")} placeholder="Task Title" className="input input-bordered w-full" required />
         <textarea {...register("task_detail")} placeholder="Task Detail" className="textarea textarea-bordered w-full" required />
@@ -230,7 +230,7 @@ const AddTask = () => {
         {/* ✅ File input for image */}
         <input type="file" {...register("task_image")} accept="image/*" className="file-input file-input-bordered w-full" required />
 
-        <button className="btn btn-primary w-full mt-4">Add Task</button>
+        <button className="btn bg-blue-600 w-full mt-4">Add Task</button>
       </form>
     </div>
   );

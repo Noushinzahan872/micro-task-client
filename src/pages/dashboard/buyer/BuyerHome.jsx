@@ -229,11 +229,11 @@ const BuyerHome = () => {
 
   return (
     <div className="p-4 max-w-7xl mx-auto">
-      <h2 className="text-2xl font-bold mb-6">Buyer Dashboard Overview</h2>
+      <h2 className="text-2xl font-bold mb-6 text-blue-600">Buyer Dashboard Overview</h2>
 
       {/* 📊 Stats */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-        <StatCard title="📋 Total Tasks" value={stats.totalTasks || 0} bg="blue-100" />
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10 text-black">
+        <StatCard title="📋 Total Tasks" value={stats.totalTasks || 0} bg="blue-200" />
         <StatCard title="⏳ Pending Workers" value={stats.pendingWorkers || 0} bg="yellow-100" />
         <StatCard title="💸 Total Paid" value={`$${stats.totalPaid || 0}`} bg="green-100" />
       </div>
@@ -246,16 +246,16 @@ const BuyerHome = () => {
         ) : submissions.length === 0 ? (
           <p className="text-gray-500">No pending submissions found.</p>
         ) : (
-          <div className="overflow-x-auto">
+          <div className="overflow-x-auto text-gray-400">
             <table className="table w-full border">
-              <thead className="bg-blue-100 text-black font-semibold">
+              <thead className="bg-blue-600 text-black font-semibold">
                 <tr>
-                  <th>#</th>
-                  <th>👨‍💻 Worker</th>
-                  <th>📝 Task</th>
-                  <th>💰 Amount</th>
-                  <th>🔍 View</th>
-                  <th>⚙️ Actions</th>
+                  <th></th>
+                  <th> Worker</th>
+                  <th> Task</th>
+                  <th> Amount</th>
+                  <th> View</th>
+                  <th> Actions</th>
                 </tr>
               </thead>
               <tbody>

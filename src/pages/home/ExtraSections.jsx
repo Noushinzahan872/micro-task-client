@@ -12,11 +12,11 @@ const ExtraSections = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-blue-600 mb-4">
             Why Choose Our Platform
           </h2>
-          <p className="text-gray-600 max-w-xl mx-auto">
-            We ensure quality, safety, and speed for both task givers and task doers. Here are 3 reasons why we stand out:
+          <p className=" max-w-xl mx-auto">
+            We ensure quality, safety, and speed for both task givers and task doers. 
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
@@ -45,19 +45,19 @@ const ExtraSections = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">How It Works</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-blue-600 mb-4">How It Works</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
-            <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition">
+            <div className="bg-base-100 p-6 rounded-xl shadow-md text-center hover:shadow-lg transition">
               <span className="text-3xl font-bold text-secondary">1</span>
               <h4 className="text-xl font-semibold mt-2">Sign Up</h4>
               <p>Create your free account as a buyer or a worker.</p>
             </div>
-            <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition">
+            <div className="bg-base-100 p-6 rounded-xl shadow-md text-center hover:shadow-lg transition">
               <span className="text-3xl font-bold text-secondary">2</span>
               <h4 className="text-xl font-semibold mt-2">Post or Accept Tasks</h4>
               <p>Buyers post tasks, workers choose and complete them.</p>
             </div>
-            <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition">
+            <div className="bg-base-100 p-6 rounded-xl shadow-md text-center hover:shadow-lg transition">
               <span className="text-3xl font-bold text-secondary">3</span>
               <h4 className="text-xl font-semibold mt-2">Get Paid</h4>
               <p>After approval, workers receive coins and convert them into real money.</p>
@@ -67,7 +67,7 @@ const ExtraSections = () => {
 
         {/* Section 3: Join Us Today */}
         <motion.div
-          className="text-center bg-gradient-to-r from-blue-500 to-blue-600 py-12 px-6 rounded-2xl shadow-xl text-black"
+          className="text-center bg-gradient-to-r from-blue-400 to-blue-600 py-12 px-6 rounded-2xl shadow-xl text-black"
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}

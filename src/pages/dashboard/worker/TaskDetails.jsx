@@ -222,12 +222,14 @@ const TaskDetails = () => {
 
   return (
     <div className="max-w-3xl mx-auto p-6 bg-white rounded-xl shadow mt-6">
-      <h2 className="text-2xl font-bold mb-3">{task.task_title}</h2>
+     <div className="text-black">
+       <h2 className="text-2xl font-bold mb-3">{task.task_title}</h2>
       <p><strong>Buyer:</strong> {task.buyer_name}</p>
       <p><strong>Deadline:</strong> {task.completion_date}</p>
       <p><strong>Payable:</strong> {task.payable_amount} coins</p>
       <p className="mb-4"><strong>Instructions:</strong> {task.task_detail}</p>
 
+     </div>
       <form onSubmit={handleSubmit}>
         <label className="block mb-2 font-medium">Your Submission</label>
         <textarea
@@ -238,7 +240,7 @@ const TaskDetails = () => {
           value={submissionDetail}
           onChange={(e) => setSubmissionDetail(e.target.value)}
         ></textarea>
-        <button type="submit" className="btn btn-primary w-full">
+        <button type="submit" className="btn bg-blue-600 w-full">
           Submit Task
         </button>
       </form>

@@ -155,7 +155,7 @@ const TopNavbar = ({ onSidebarToggle }) => {
   };
 
   return (
-    <div className="w-full bg-blue-900 text-white px-4 py-3 shadow flex justify-between items-center">
+    <div className="w-full bg-blue-300 text-black px-4 py-3 shadow flex justify-between items-center sticky top-0 z-50">
       {/* Left - Menu & Logo */}
       <div className="flex items-center gap-4">
         {/* Sidebar Toggle (only on mobile) */}
@@ -203,7 +203,7 @@ const TopNavbar = ({ onSidebarToggle }) => {
 
             <button
               onClick={handleLogout}
-              className="bg-red-600 hover:bg-red-700 px-3 py-1 rounded text-xs md:text-sm"
+              className="bg-pink-400 hover:bg-pink-500 px-3 py-1 rounded text-xs md:text-sm"
             >
               Logout
             </button>
