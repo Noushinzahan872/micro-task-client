@@ -66,7 +66,7 @@
 
 //   useEffect(() => {
 //     if (user?.email) {
-//       fetch(`http://localhost:3000/users/${user.email}`)
+//       fetch(`https://micro-task-server-ashen.vercel.app/users/${user.email}`)
 //         .then((res) => {
 //           if (!res.ok) throw new Error("Failed to fetch user data");
 //           return res.json();
@@ -124,6 +124,7 @@ import { useEffect, useState } from "react";
 import useAuth from "../hooks/useAuth";
 import { BellIcon, MenuIcon } from "lucide-react";
 import { Link, useNavigate } from "react-router";
+import MicroTaskLogo from "../shared/MicroTaskLogo";
 
 
 const TopNavbar = ({ onSidebarToggle }) => {
@@ -134,7 +135,7 @@ const TopNavbar = ({ onSidebarToggle }) => {
 
   useEffect(() => {
     if (user?.email) {
-      fetch(`http://localhost:3000/users/${user.email}`)
+      fetch(`https://micro-task-server-ashen.vercel.app/users/${user.email}`)
         .then((res) => res.ok ? res.json() : {})
         .then((data) => {
           setCoins(data?.coins || 0);
@@ -167,7 +168,7 @@ const TopNavbar = ({ onSidebarToggle }) => {
         </button>
 
         <Link to="/" className="text-xl font-bold tracking-wide">
-          MicroTask
+          <MicroTaskLogo></MicroTaskLogo>
         </Link>
       </div>
 

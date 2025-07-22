@@ -13,7 +13,7 @@
 //   // Load Buyer Stats (Task Count, Pending Workers, Total Paid)
 //   useEffect(() => {
 //     if (user?.email) {
-//       fetch(`http://localhost:3000/buyer-stats/${user.email}`)
+//       fetch(`https://micro-task-server-ashen.vercel.app/buyer-stats/${user.email}`)
 //         .then((res) => res.json())
 //         .then((data) => setStats(data));
 //     }
@@ -22,14 +22,14 @@
 //   // Load pending submissions
 //   useEffect(() => {
 //     if (user?.email) {
-//       fetch(`http://localhost:3000/submissions/buyer/${user.email}?status=pending`)
+//       fetch(`https://micro-task-server-ashen.vercel.app/submissions/buyer/${user.email}?status=pending`)
 //         .then((res) => res.json())
 //         .then((data) => setSubmissions(data));
 //     }
 //   }, [user]);
 
 //   const handleApprove = async (id) => {
-//     const res = await fetch(`http://localhost:3000/submissions/${id}/approve`, {
+//     const res = await fetch(`https://micro-task-server-ashen.vercel.app/submissions/${id}/approve`, {
 //       method: "PATCH",
 //     });
 //     const data = await res.json();
@@ -40,7 +40,7 @@
 //   };
 
 //   const handleReject = async (id) => {
-//     const res = await fetch(`http://localhost:3000/submissions/${id}/reject`, {
+//     const res = await fetch(`https://micro-task-server-ashen.vercel.app/submissions/${id}/reject`, {
 //       method: "PATCH",
 //     });
 //     const data = await res.json();
@@ -156,7 +156,7 @@ const BuyerHome = () => {
   // 📊 Load Buyer Stats
   const fetchStats = async () => {
     try {
-      const res = await fetch(`http://localhost:3000/buyer-stats/${user.email}`);
+      const res = await fetch(`https://micro-task-server-ashen.vercel.app/buyer-stats/${user.email}`);
       const data = await res.json();
       setStats(data);
     } catch (error) {
@@ -167,7 +167,7 @@ const BuyerHome = () => {
   // ⏳ Load Submissions
   const fetchSubmissions = async () => {
     try {
-      const res = await fetch(`http://localhost:3000/submissions/buyer/${user.email}?status=pending`);
+      const res = await fetch(`https://micro-task-server-ashen.vercel.app/submissions/buyer/${user.email}?status=pending`);
       const data = await res.json();
       setSubmissions(data);
     } catch (error) {
@@ -193,7 +193,7 @@ const BuyerHome = () => {
     });
 
     if (confirm.isConfirmed) {
-      const res = await fetch(`http://localhost:3000/submissions/${id}/approve`, {
+      const res = await fetch(`https://micro-task-server-ashen.vercel.app/submissions/${id}/approve`, {
         method: "PATCH",
       });
       const data = await res.json();
@@ -215,7 +215,7 @@ const BuyerHome = () => {
     });
 
     if (confirm.isConfirmed) {
-      const res = await fetch(`http://localhost:3000/submissions/${id}/reject`, {
+      const res = await fetch(`https://micro-task-server-ashen.vercel.app/submissions/${id}/reject`, {
         method: "PATCH",
       });
       const data = await res.json();
@@ -258,7 +258,7 @@ const BuyerHome = () => {
                   <th> Actions</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody className="text-black">
                 {submissions.map((sub, i) => (
                   <tr key={sub._id} className="hover:bg-blue-50 text-center">
                     <td>{i + 1}</td>

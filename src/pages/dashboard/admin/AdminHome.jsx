@@ -17,7 +17,7 @@ const AdminHome = () => {
   const [stats, setStats] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:3000/admin-stats")
+    fetch("https://micro-task-server-ashen.vercel.app/admin-stats")
       .then((res) => res.json())
       .then((data) => setStats(data));
   }, []);

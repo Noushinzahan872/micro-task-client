@@ -12,7 +12,7 @@
 
 //   useEffect(() => {
 //     if (user?.email) {
-//       fetch(`http://localhost:3000/users/${user.email}`)
+//       fetch(`https://micro-task-server-ashen.vercel.app/users/${user.email}`)
 //         .then((res) => res.json())
 //         .then((data) => setUserData(data));
 //     }
@@ -36,7 +36,7 @@
 //       status: "pending",
 //     };
 
-//     const res = await fetch("http://localhost:3000/withdrawals", {
+//     const res = await fetch("https://micro-task-server-ashen.vercel.app/withdrawals", {
 //       method: "POST",
 //       headers: { "Content-Type": "application/json" },
 //       body: JSON.stringify(withdrawal),
@@ -142,7 +142,7 @@ const Withdrawals = () => {
 
   useEffect(() => {
     if (user?.email) {
-      fetch(`http://localhost:3000/users/${user.email}`)
+      fetch(`https://micro-task-server-ashen.vercel.app/users/${user.email}`)
         .then((res) => res.json())
         .then((data) => setUserData(data));
     }
@@ -175,7 +175,7 @@ const Withdrawals = () => {
     };
 
     try {
-      const res = await fetch("http://localhost:3000/withdrawals", {
+      const res = await fetch("https://micro-task-server-ashen.vercel.app/withdrawals", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(withdrawal),
@@ -190,7 +190,7 @@ const Withdrawals = () => {
         setAccount("");
 
         // refresh user data
-        const updated = await fetch(`http://localhost:3000/users/${user.email}`);
+        const updated = await fetch(`https://micro-task-server-ashen.vercel.app/users/${user.email}`);
         const updatedUser = await updated.json();
         setUserData(updatedUser);
       } else {

@@ -64,7 +64,7 @@ const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
-  const from = location.state?.from?.pathname || "/dashboard";
+  const from = location.state?.from?.pathname || "/";
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -107,9 +107,9 @@ const Login = () => {
         <div className="bg-base-100 shadow-xl rounded-xl p-6 md:p-10 w-full max-w-md mx-auto">
           <Link
             to="/"
-            className="text-2xl flex items-center justify-center font-bold bg-gradient-to-r from-purple-500 via-pink-400 to-violet-400 bg-clip-text text-transparent"
+            className="text-2xl flex items-center justify-center font-bold "
           >
-            MicroTask
+          <span className="text-green-600">Micro</span><span className="text-blue-600">Task</span>
           </Link>
           <h1 className="text-xl font-bold mb-3 text-center">Login</h1>
 

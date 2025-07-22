@@ -4,7 +4,7 @@ const BestWorkers = () => {
   const [workers, setWorkers] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/user/top-workers")
+    fetch("https://micro-task-server-ashen.vercel.app/user/top-workers")
       .then((res) => res.json())
       .then((data) => setWorkers(data));
   }, []);

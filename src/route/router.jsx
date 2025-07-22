@@ -38,15 +38,17 @@ import WithdrawRequests from "../pages/dashboard/admin/WithdrawRequests";
             Component:Register
         }    
 
-
 ]
 },
 
 {
+   
     path: "/dashboard",
-    element: <DashboardLayout/>, // Sidebar + TopNavbar
+
+    element: <DashboardLayout/>, 
     children: [
-      { path: "/dashboard/worker-home", element: <WorkerHome /> },
+      { path: "/dashboard/worker-home",
+         element: <WorkerHome /> },
       {
         path:"/dashboard/tasks",
         element:<TaskList></TaskList>
@@ -68,9 +70,9 @@ import WithdrawRequests from "../pages/dashboard/admin/WithdrawRequests";
 
 
 
-
-
-      { path: "/dashboard/buyer-home", element: <BuyerHome/> },
+      { path: "/dashboard/buyer-home",
+      
+         element: <BuyerHome/> },
       {
         path:"/dashboard/add-task",
         element:<AddTask></AddTask>

@@ -7,7 +7,7 @@ const ManageTasks = () => {
   // Fetch all tasks from admin endpoint
   const fetchTasks = async () => {
     try {
-      const res = await fetch("http://localhost:3000/admin/tasks");
+      const res = await fetch("https://micro-task-server-ashen.vercel.app/admin/tasks");
       const data = await res.json();
       setTasks(data);
     } catch (error) {
@@ -31,7 +31,7 @@ const ManageTasks = () => {
 
     if (confirm.isConfirmed) {
       try {
-        const res = await fetch(`http://localhost:3000/tasks/${id}`, {
+        const res = await fetch(`https://micro-task-server-ashen.vercel.app/tasks/${id}`, {
           method: "DELETE",
         });
 
@@ -51,7 +51,7 @@ const ManageTasks = () => {
 
   return (
     <div className="p-4 overflow-x-auto">
-      <h2 className="text-2xl font-bold mb-4">Manage Tasks</h2>
+      <h2 className="text-2xl font-bold mb-4 text-blue-600">Manage Tasks</h2>
 
       <table className="min-w-full border bg-white rounded shadow">
         <thead className="bg-blue-600 text-white">

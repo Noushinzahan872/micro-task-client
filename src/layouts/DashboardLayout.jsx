@@ -52,7 +52,7 @@
 //   // Fetch user data from DB
 //   useEffect(() => {
 //     if (user?.email) {
-//       fetch(`http://localhost:3000/users/${user.email}`)
+//       fetch(`https://micro-task-server-ashen.vercel.app/users/${user.email}`)
 //         .then((res) => res.json())
 //         .then((data) => {
 //           setUserData(data);
@@ -114,7 +114,7 @@ const DashboardLayout = () => {
   // Fetch user info from backend (based on email)
   useEffect(() => {
     if (user?.email) {
-      fetch(`http://localhost:3000/users/${user.email}`)
+      fetch(`https://micro-task-server-ashen.vercel.app/users/${user.email}`)
         .then((res) => res.json())
         .then((data) => setUserData(data))
         .catch((err) => console.error("User load failed", err));

@@ -5,7 +5,7 @@ const ManageUsers = () => {
   const [users, setUsers] = useState([]);
 
   const fetchUsers = async () => {
-    const res = await fetch("http://localhost:3000/users");
+    const res = await fetch("https://micro-task-server-ashen.vercel.app/users");
     const data = await res.json();
     setUsers(data);
   };
@@ -15,7 +15,7 @@ const ManageUsers = () => {
   }, []);
 
   const handleRoleChange = async (id, newRole) => {
-    await fetch(`http://localhost:3000/users/${id}/role`, {
+    await fetch(`https://micro-task-server-ashen.vercel.app/users/${id}/role`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ role: newRole }),
@@ -32,7 +32,7 @@ const ManageUsers = () => {
     });
 
     if (confirm.isConfirmed) {
-      await fetch(`http://localhost:3000/users/${id}`, {
+      await fetch(`https://micro-task-server-ashen.vercel.app/users/${id}`, {
         method: "DELETE",
       });
       fetchUsers();
@@ -41,7 +41,7 @@ const ManageUsers = () => {
 
   return (
     <div className="p-4 overflow-x-auto">
-      <h2 className="text-2xl font-bold mb-4">Manage Users</h2>
+      <h2 className="text-2xl font-bold mb-4 text-blue-600">Manage Users</h2>
       <table className="min-w-full border bg-white rounded shadow">
         <thead className="bg-blue-600 text-white">
           <tr>

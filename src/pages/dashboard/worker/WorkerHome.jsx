@@ -11,12 +11,12 @@ const WorkerHome = () => {
   useEffect(() => {
     if (user?.email) {
       // Load Stats
-      fetch(`http://localhost:3000/worker-stats/${user.email}`)
+      fetch(`https://micro-task-server-ashen.vercel.app/worker-stats/${user.email}`)
         .then(res => res.json())
         .then(data => setStats(data));
 
       // Load Approved Submissions
-      fetch(`http://localhost:3000/submissions/worker/${user.email}?status=approved`)
+      fetch(`https://micro-task-server-ashen.vercel.app/submissions/worker/${user.email}?status=approved`)
         .then(res => res.json())
         .then(data => setApprovedSubmissions(data));
     }

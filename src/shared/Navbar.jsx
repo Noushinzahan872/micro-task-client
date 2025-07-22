@@ -15,7 +15,7 @@
 
 //   useEffect(() => {
 //     if (user?.email) {
-//       fetch(`http://localhost:3000/users/${user.email}`)
+//       fetch(`https://micro-task-server-ashen.vercel.app/users/${user.email}`)
 //         .then((res) => {
 //           if (!res.ok) throw new Error("Failed to fetch user data");
 //           return res.json();
@@ -169,6 +169,8 @@ import { FaMoon, FaSun } from "react-icons/fa";
 
 import { Link, NavLink } from "react-router";
 import { AuthContext } from "../contexts/AuthContext";
+import useUserRole from "../hooks/useUserRole";
+import MicroTaskLogo from "./MicroTaskLogo";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -176,11 +178,14 @@ const Navbar = () => {
   const [isDark, setIsDark] = useState(() => {
     return localStorage.getItem("theme") === "dark";
   });
-
+   const { userData, loading } = useUserRole(user?.email);
+  
+const role=userData?.role
+// console.log(role);
 
   useEffect(() => {
     if (user?.email) {
-      fetch(`http://localhost:3000/users/${user.email}`)
+      fetch(`https://micro-task-server-ashen.vercel.app/users/${user.email}`)
         .then((res) => {
           if (!res.ok) throw new Error("Failed to fetch user data");
           return res.json();
@@ -192,7 +197,6 @@ const Navbar = () => {
         });
     }
   }, [user]);
-
 
 
 
@@ -226,15 +230,30 @@ const Navbar = () => {
     <>
       <li><NavLink to="/" className={navLinkStyle}><span className='font-bold text-blue-600'>Home</span></NavLink></li>
       {/* <li><NavLink to="/tasks" className={navLinkStyle}>Tasks</NavLink></li> */}
-      {user && <li><NavLink to="/dashboard" className={navLinkStyle}><span className='font-bold text-blue-600'>Dashboard</span></NavLink></li>}
+      {/* {user && <li><NavLink to="/dashboard" className={navLinkStyle}><span className='font-bold text-blue-600'>Dashboard</span></NavLink></li>} */}
+
+{user  && role ==='Worker' && <li><NavLink to="/dashboard/worker-home" className={navLinkStyle}><span className='font-bold text-blue-600'>Dashboard</span></NavLink></li>}
+
+
+{user  && role ==='Buyer' &&  <li><NavLink to="/dashboard/buyer-home" className={navLinkStyle}><span className='font-bold text-blue-600'>Dashboard</span></NavLink></li>}
+
+
+{user  && role ==='Admin' && <li><NavLink to="/dashboard/admin-home" className={navLinkStyle}><span className='font-bold text-blue-600'>Dashboard</span></NavLink></li>}
+
+
     </>
   );
+
+// if (loading){
+//   return <h1>loading...</h1>
+// }
 
   return (
     <div className="navbar bg-blue-300 shadow sticky top-0 z-50">
       {/* Left */}
       <div className="navbar-start">
-        <Link to="/" className="text-2xl font-bold text-blue-600">MicroTask</Link>
+        {/* <Link to="/" className="text-2xl font-bold text-blue-600">MicroTask</Link> */}
+      <MicroTaskLogo></MicroTaskLogo>
       </div>
 
       {/* Center */}
@@ -265,7 +284,7 @@ const Navbar = () => {
             <button onClick={handleLogout} className="btn btn-sm bg-pink-400 border-none">
               Logout
             </button>
-            <Link to="" className="btn btn-sm bg-green-500 border-none">Join as Developer</Link>
+            <Link to="/https://github.com/Programming-Hero-Web-Course4/b11a12-client-side-Noushinzahan872" className="btn btn-sm bg-green-500 border-none">Join as Developer</Link>
           </div>
         ) : (
           <>

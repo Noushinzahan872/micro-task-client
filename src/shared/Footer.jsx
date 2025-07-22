@@ -17,6 +17,7 @@
 import React from 'react';
 import { FaFacebook, FaGithub, FaLinkedinIn, FaSquareYoutube } from 'react-icons/fa6';
 import { MdOutlineHistoryEdu } from 'react-icons/md';
+import MicroTaskLogo from './MicroTaskLogo';
 
 const Footer = () => {
     return (
@@ -24,12 +25,7 @@ const Footer = () => {
             <div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
                 {/* Logo and Title */}
                 <div className="lg:w-1/3">
-                    <a href="#" className="flex items-center justify-center lg:justify-start space-x-2">
-                        <MdOutlineHistoryEdu className="text-4xl text-blue-500" />
-                        <h2 className="text-2xl font-extrabold bg-gradient-to-r from-purple-400 via-blue-500 to-blue-500 bg-clip-text text-transparent drop-shadow-lg">
-                          MicroTasker
-                        </h2>
-                    </a>
+                    <MicroTaskLogo></MicroTaskLogo>
                 </div>
 
                 {/* Footer Sections */}

@@ -17,14 +17,14 @@ const PurchaseCoins = () => {
       paymentDate: new Date(),
     };
 
-    const paymentRes = await fetch("http://localhost:3000/payments", {
+    const paymentRes = await fetch("https://micro-task-server-ashen.vercel.app/payments", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(paymentInfo),
     });
 
     // 2. Increase user coins
-    const coinRes = await fetch(`http://localhost:3000/users/add-coins/${user.email}`, {
+    const coinRes = await fetch(`https://micro-task-server-ashen.vercel.app/users/add-coins/${user.email}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ coins }),

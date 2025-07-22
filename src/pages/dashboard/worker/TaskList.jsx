@@ -7,7 +7,7 @@
 //   const navigate = useNavigate();
 
 //   useEffect(() => {
-//     fetch("http://localhost:3000/tasks/available")
+//     fetch("https://micro-task-server-ashen.vercel.app/tasks/available")
 //       .then((res) => res.json())
 //       .then((data) => setTasks(data));
 //   }, []);
@@ -46,7 +46,7 @@ const TaskList = () => {
   const [tasks, setTasks] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/tasks/available")
+    fetch("https://micro-task-server-ashen.vercel.app/tasks/available")
       .then((res) => res.json())
       .then((data) => setTasks(data));
   }, []);

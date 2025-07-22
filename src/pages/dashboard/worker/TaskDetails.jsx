@@ -13,7 +13,7 @@
 //   const [submissionDetails, setSubmissionDetails] = useState("");
 
 //   useEffect(() => {
-//     fetch(`http://localhost:3000/tasks/${taskId}`)
+//     fetch(`https://micro-task-server-ashen.vercel.app/tasks/${taskId}`)
 //       .then((res) => res.json())
 //       .then((data) => {
 //         setTask(data);
@@ -40,7 +40,7 @@
 //       status: "pending",
 //     };
 
-//     const res = await fetch("http://localhost:3000/submissions", {
+//     const res = await fetch("https://micro-task-server-ashen.vercel.app/submissions", {
 //       method: "POST",
 //       headers: { "Content-Type": "application/json" },
 //       body: JSON.stringify(submission),
@@ -103,7 +103,7 @@
 //   const [submissionDetail, setSubmissionDetail] = useState("");
 
 //   useEffect(() => {
-//     fetch(`http://localhost:3000/tasks/${id}`)
+//     fetch(`https://micro-task-server-ashen.vercel.app/tasks/${id}`)
 //       .then((res) => res.json())
 //       .then((data) => setTask(data));
 //   }, [id]);
@@ -121,7 +121,7 @@
 //       submission_detail: submissionDetail,
 //     };
 
-//     const res = await fetch("http://localhost:3000/submissions", {
+//     const res = await fetch("https://micro-task-server-ashen.vercel.app/submissions", {
 //       method: "POST",
 //       headers: {
 //         "Content-Type": "application/json",
@@ -179,7 +179,7 @@ const TaskDetails = () => {
   const [submissionDetail, setSubmissionDetail] = useState("");
 
   useEffect(() => {
-    fetch(`http://localhost:3000/tasks/available`)
+    fetch(`https://micro-task-server-ashen.vercel.app/tasks/available`)
       .then((res) => res.json())
       .then((data) => {
         const found = data.find((item) => item._id === id);
@@ -203,7 +203,7 @@ const TaskDetails = () => {
        status: "pending",
     };
 
-    const res = await fetch("http://localhost:3000/submissions", {
+    const res = await fetch("https://micro-task-server-ashen.vercel.app/submissions", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(submission),

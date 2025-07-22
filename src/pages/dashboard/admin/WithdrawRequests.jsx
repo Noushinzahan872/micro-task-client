@@ -5,7 +5,7 @@ const WithdrawRequests = () => {
   const [requests, setRequests] = useState([]);
 
   const fetchWithdrawals = async () => {
-    const res = await fetch("http://localhost:3000/withdrawals/pending");
+    const res = await fetch("https://micro-task-server-ashen.vercel.app/withdrawals/pending");
     const data = await res.json();
     setRequests(data);
   };
@@ -23,7 +23,7 @@ const WithdrawRequests = () => {
     });
 
     if (confirm.isConfirmed) {
-      await fetch(`http://localhost:3000/withdrawals/${id}/approve`, {
+      await fetch(`https://micro-task-server-ashen.vercel.app/withdrawals/${id}/approve`, {
         method: "PATCH",
       });
       fetchWithdrawals();
@@ -32,7 +32,7 @@ const WithdrawRequests = () => {
 
   return (
     <div className="p-4 overflow-x-auto">
-      <h2 className="text-2xl font-bold mb-4 text-blue-600">Pending Withdraw Requests</h2>
+      <h2 className="text-2xl font-bold mb-4 text-blue-600"> Withdraw Requests</h2>
       <table className="min-w-full bg-white border rounded shadow">
         <thead className="bg-blue-600 text-white">
           <tr>

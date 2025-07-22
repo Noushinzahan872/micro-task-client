@@ -54,7 +54,7 @@
 //       };
 
 //       // Save user backend
-//       const res = await fetch("http://localhost:3000/users", {
+//       const res = await fetch("https://micro-task-server-ashen.vercel.app/users", {
 //         method: "POST",
 //         headers: { "Content-Type": "application/json" },
 //         body: JSON.stringify(userData),
@@ -88,7 +88,7 @@
 //       };
 
 //       // Send user to backend to create if not exists
-//       const res = await fetch("http://localhost:3000/users", {
+//       const res = await fetch("https://micro-task-server-ashen.vercel.app/users", {
 //         method: "POST",
 //         headers: { "Content-Type": "application/json" },
 //         body: JSON.stringify(userData),
@@ -197,7 +197,7 @@ const RegisterLogin = () => {
         coins: role === "Worker" ? 10 : 50,
       };
 
-      const res = await fetch("http://localhost:3000/users", {
+      const res = await fetch("https://micro-task-server-ashen.vercel.app/users", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(userData),
@@ -229,7 +229,7 @@ const RegisterLogin = () => {
         role: "Worker",
         coins: 10,
       };
-      await fetch("http://localhost:3000/users", {
+      await fetch("https://micro-task-server-ashen.vercel.app/users", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(userData),
@@ -249,11 +249,11 @@ const RegisterLogin = () => {
         </div>
 
         <div className="bg-base-100 shadow-xl rounded-xl p-6 md:p-10 w-full max-w-md mx-auto">
-         <Link
+          <Link
                      to="/"
-                     className="text-2xl flex items-center justify-center font-bold bg-gradient-to-r from-purple-500 via-pink-400 to-violet-400 bg-clip-text text-transparent"
+                     className="text-2xl flex items-center justify-center font-bold "
                    >
-                     MicroTask
+                   <span className="text-green-600">Micro</span><span className="text-blue-600">Task</span>
                    </Link>
                     <h1 className="text-xl font-bold mb-3 text-center">Create an account</h1>
 

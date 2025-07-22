@@ -6,7 +6,7 @@ const useUserRole = (email) => {
 
   useEffect(() => {
     if (email) {
-      fetch(`http://localhost:3000/users/${email}`)
+      fetch(`https://micro-task-server-ashen.vercel.app/users/${email}`)
         .then(res => res.json())
         .then(data => {
           setUserData(data);

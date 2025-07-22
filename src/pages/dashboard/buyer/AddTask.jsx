@@ -14,7 +14,7 @@
 //   // Load buyer info
 //   useEffect(() => {
 //     if (user?.email) {
-//       fetch(`http://localhost:3000/users/${user.email}`)
+//       fetch(`https://micro-task-server-ashen.vercel.app/users/${user.email}`)
 //         .then(res => res.json())
 //         .then(data => setBuyer(data));
 //     }
@@ -59,7 +59,7 @@
 //     };
 
 //     // Save task to DB
-//     fetch("http://localhost:3000/tasks", {
+//     fetch("https://micro-task-server-ashen.vercel.app/tasks", {
 //       method: "POST",
 //       headers: { "Content-Type": "application/json" },
 //       body: JSON.stringify(newTask),
@@ -68,7 +68,7 @@
 //       .then((task) => {
 //         if (task.insertedId) {
 //           // Reduce coins
-//           fetch(`http://localhost:3000/users/deduct-coins/${user.email}`, {
+//           fetch(`https://micro-task-server-ashen.vercel.app/users/deduct-coins/${user.email}`, {
 //             method: "PATCH",
 //             headers: { "Content-Type": "application/json" },
 //             body: JSON.stringify({ coins: totalCost }),
@@ -124,7 +124,7 @@ const AddTask = () => {
   // Load buyer info
   useEffect(() => {
     if (user?.email) {
-      fetch(`http://localhost:3000/users/${user.email}`)
+      fetch(`https://micro-task-server-ashen.vercel.app/users/${user.email}`)
         .then(res => res.json())
         .then(data => setBuyer(data));
     }
@@ -189,7 +189,7 @@ const AddTask = () => {
     };
 
     // Save task to DB
-    fetch("http://localhost:3000/tasks", {
+    fetch("https://micro-task-server-ashen.vercel.app/tasks", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newTask),
@@ -198,7 +198,7 @@ const AddTask = () => {
       .then((task) => {
         if (task.insertedId) {
           // Reduce coins
-          fetch(`http://localhost:3000/users/deduct-coins/${user.email}`, {
+          fetch(`https://micro-task-server-ashen.vercel.app/users/deduct-coins/${user.email}`, {
             method: "PATCH",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ coins: totalCost }),

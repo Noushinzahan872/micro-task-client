@@ -14,7 +14,7 @@ const MyTasks = () => {
 
   useEffect(() => {
     if (user?.email) {
-      fetch(`http://localhost:3000/tasks/buyer/${user.email}`)
+      fetch(`https://micro-task-server-ashen.vercel.app/tasks/buyer/${user.email}`)
         .then(res => res.json())
         .then(data => setTasks(data));
     }
@@ -30,7 +30,7 @@ const MyTasks = () => {
     });
     if (!confirm.isConfirmed) return;
 
-    fetch(`http://localhost:3000/tasks/${id}`, { method: 'DELETE' })
+    fetch(`https://micro-task-server-ashen.vercel.app/tasks/${id}`, { method: 'DELETE' })
       .then(res => res.json())
       .then(() => {
         Swal.fire('Deleted!', 'Task deleted and coins refunded.', 'success');
@@ -52,7 +52,7 @@ const MyTasks = () => {
   };
 
   const submitUpdate = () => {
-    fetch(`http://localhost:3000/tasks/${editTask._id}`, {
+    fetch(`https://micro-task-server-ashen.vercel.app/tasks/${editTask._id}`, {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(form),
