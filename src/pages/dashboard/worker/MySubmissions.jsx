@@ -82,13 +82,39 @@ const MySubmissions = () => {
   const [submissions, setSubmissions] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
 
-  useEffect(() => {
-    if (user?.email) {
-      fetch(`https://micro-task-server-ashen.vercel.app/submissions/worker/${user.email}`)
-        .then((res) => res.json())
-        .then((data) => setSubmissions(data));
+
+
+  // useEffect(() => {
+  //   if (user?.email) {
+  //     fetch(`https://micro-task-server-ashen.vercel.app/submissions/worker/${user.email}`)
+  //       .then((res) => res.json())
+  //       .then((data) => setSubmissions(data));
+  //   }
+  // }, [user]);
+
+
+useEffect(() => {
+  const fetchSubmissions = async () => {
+    if (user?.email && user?.accessToken) {
+      try {
+        const res = await fetch(`https://micro-task-server-ashen.vercel.app/submissions/worker/${user.email}`, {
+          headers: {
+            Authorization: `Bearer ${user.accessToken}`,
+          },
+        });
+        const data = await res.json();
+        setSubmissions(data);
+      } catch (error) {
+        console.error("Error fetching submissions:", error);
+      }
     }
-  }, [user]);
+  };
+
+  fetchSubmissions();
+}, [user]);
+
+
+
 
   const totalPages = Math.ceil(submissions.length / ITEMS_PER_PAGE);
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;

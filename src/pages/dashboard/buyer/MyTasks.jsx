@@ -12,13 +12,37 @@ const MyTasks = () => {
     submission_info: ''
   });
 
-  useEffect(() => {
-    if (user?.email) {
-      fetch(`https://micro-task-server-ashen.vercel.app/tasks/buyer/${user.email}`)
-        .then(res => res.json())
-        .then(data => setTasks(data));
+  // useEffect(() => {
+  //   if (user?.email) {
+  //     fetch(`https://micro-task-server-ashen.vercel.app/tasks/buyer/${user.email}`)
+  //       .then(res => res.json())
+  //       .then(data => setTasks(data));
+  //   }
+  // }, [user]);
+
+
+useEffect(() => {
+  const fetchTasks = async () => {
+    if (user?.email && user?.accessToken) {
+      try {
+        const res = await fetch(`https://micro-task-server-ashen.vercel.app/tasks/buyer/${user.email}`, {
+          headers: {
+            Authorization: `Bearer ${user.accessToken}`,
+          },
+        });
+        const data = await res.json();
+        setTasks(data);
+      } catch (error) {
+        console.error("Error fetching tasks:", error);
+      }
     }
-  }, [user]);
+  };
+
+  fetchTasks();
+}, [user]);
+
+
+
 
   const handleDelete = async (id) => {
     const confirm = await Swal.fire({
