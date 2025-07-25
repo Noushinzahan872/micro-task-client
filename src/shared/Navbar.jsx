@@ -251,7 +251,7 @@ const role=userData?.role
   return (
     <div className="navbar bg-blue-300 shadow sticky top-0 z-50">
       {/* Left */}
-      <div className="navbar-start">
+      <div className="navbar-start hidden lg:block">
         {/* <Link to="/" className="text-2xl font-bold text-blue-600">MicroTask</Link> */}
       <MicroTaskLogo></MicroTaskLogo>
       </div>
@@ -284,13 +284,13 @@ const role=userData?.role
             <button onClick={handleLogout} className="btn btn-sm bg-pink-400 border-none">
               Logout
             </button>
-            <Link to="/https://github.com/Programming-Hero-Web-Course4/b11a12-client-side-Noushinzahan872" className="btn btn-sm bg-green-500 border-none">Join as Developer</Link>
+            <Link to="/https://github.com/Programming-Hero-Web-Course4/b11a12-client-side-Noushinzahan872" className="btn btn-sm bg-green-500 border-none">Join as</Link>
           </div>
         ) : (
           <>
             <Link to="/login" className="btn btn-sm btn-primary">Login</Link>
             <Link to="/register" className="btn btn-sm btn-primary">Register</Link>
-            <Link to="" className="btn btn-sm bg-green-500 border-none">Join as Developer</Link>
+            <Link to="" className="btn btn-sm bg-green-500 border-none">Join as</Link>
 
           </>
         )}

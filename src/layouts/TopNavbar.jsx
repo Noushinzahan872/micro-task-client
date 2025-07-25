@@ -168,7 +168,9 @@ const TopNavbar = ({ onSidebarToggle }) => {
         </button>
 
         <Link to="/" className="text-xl font-bold tracking-wide">
-          <MicroTaskLogo></MicroTaskLogo>
+<div className="hidden lg:block">
+  <MicroTaskLogo></MicroTaskLogo>
+</div>
         </Link>
       </div>
 
