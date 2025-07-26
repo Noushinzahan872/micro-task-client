@@ -12,6 +12,7 @@
 
 
 import { useEffect, useState } from "react";
+import LoadingSpinner from "../../../shared/LoadingSpinner";
 
 const AdminHome = () => {
   const [stats, setStats] = useState(null);
@@ -22,7 +23,7 @@ const AdminHome = () => {
       .then((data) => setStats(data));
   }, []);
 
-  if (!stats) return <p className="p-4">Loading stats...</p>;
+  if (!stats) return <LoadingSpinner></LoadingSpinner>;
 
   return (
     <div className="p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">

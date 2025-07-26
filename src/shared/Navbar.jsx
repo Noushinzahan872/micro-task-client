@@ -1,168 +1,6 @@
 
 
 
-// import { useEffect, useState } from "react";
-// import useAuth from "../hooks/useAuth";
-
-// import { FaBars } from "react-icons/fa";
-// import { Link } from "react-router";
-// import MicroTaskLogo from "./MicroTaskLogo";
-
-// const Navbar = () => {
-//   const { user, logOut } = useAuth();
-//   const [coins, setCoins] = useState(0);
-//   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-//   useEffect(() => {
-//     if (user?.email) {
-//       fetch(`https://micro-task-server-ashen.vercel.app/users/${user.email}`)
-//         .then((res) => {
-//           if (!res.ok) throw new Error("Failed to fetch user data");
-//           return res.json();
-//         })
-//         .then((data) => setCoins(data.coins || 0))
-//         .catch((err) => {
-//           console.error("Failed to load coins", err);
-//           setCoins(0);
-//         });
-//     }
-//   }, [user]);
-
-//   const handleLogout = () => {
-//     logOut();
-//   };
-
-//   return (
-//     <nav className="bg-blue-800 text-white shadow-md sticky top-0 z-50">
-//       <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-//         <MicroTaskLogo></MicroTaskLogo>
-
-//         {/* Mobile menu button */}
-//         <div className="md:hidden">
-//           <button
-//             onClick={() => setIsMenuOpen(!isMenuOpen)}
-//             className="text-white focus:outline-none"
-//           >
-//             <FaBars size={24} />
-//           </button>
-//         </div>
-
-//         {/* Desktop menu */}
-//         <div className="hidden md:flex items-center gap-5">
-//           {!user ? (
-//             <>
-//               <Link to="/login" className="hover:underline">
-//                 Login
-//               </Link>
-//               <Link to="/register" className="hover:underline">
-//                 Register
-//               </Link>
-//               <a
-//                 href="https://github.com/yourclientrepo"
-//                 target="_blank"
-//                 rel="noreferrer"
-//                 className="hover:underline"
-//               >
-//                 Join as Developer
-//               </a>
-//             </>
-//           ) : (
-//             <>
-//               <Link to="/dashboard" className="hover:underline">
-//                 Dashboard
-//               </Link>
-//               <span className="bg-yellow-400 text-black px-3 py-1 rounded-full text-sm font-semibold">
-//                 💰 {coins} Coins
-//               </span>
-//               <img
-//                 src={user?.photoURL || "https://i.ibb.co/yX9tKqX/default-user.png"}
-//                 alt={user?.displayName || "User"}
-//                 title={user?.displayName || ""}
-//                 className="w-10 h-10 rounded-full border-2 border-white"
-//               />
-//               <button
-//                 onClick={handleLogout}
-//                 className="bg-red-600 hover:bg-red-700 px-3 py-1 rounded text-sm"
-//               >
-//                 Logout
-//               </button>
-//               <a
-//                 href="https://github.com/yourclientrepo"
-//                 target="_blank"
-//                 rel="noreferrer"
-//                 className="hover:underline"
-//               >
-//                 Join as Developer
-//               </a>
-//             </>
-//           )}
-//         </div>
-//       </div>
-
-//       {/* Mobile Dropdown Menu */}
-//       {isMenuOpen && (
-//         <div className="md:hidden px-4 pb-4 flex flex-col gap-3">
-//           {!user ? (
-//             <>
-//               <Link to="/login" className="hover:underline">
-//                 Login
-//               </Link>
-//               <Link to="/register" className="hover:underline">
-//                 Register
-//               </Link>
-//               <a
-//                 href="https://github.com/yourclientrepo"
-//                 target="_blank"
-//                 rel="noreferrer"
-//                 className="hover:underline"
-//               >
-//                 Join as Developer
-//               </a>
-//             </>
-//           ) : (
-//             <>
-//               <Link to="/dashboard" className="hover:underline">
-//                 Dashboard
-//               </Link>
-//               <span className="bg-yellow-400 text-black px-3 py-1 rounded-full text-sm font-semibold">
-//                 💰 {coins} Coins
-//               </span>
-//               <div className="flex items-center gap-2">
-//                 <img
-//                   src={user?.photoURL || "https://i.ibb.co/yX9tKqX/default-user.png"}
-//                   alt={user?.displayName || "User"}
-//                   className="w-8 h-8 rounded-full border"
-//                 />
-//                 <span>{user?.displayName}</span>
-//               </div>
-//               <button
-//                 onClick={handleLogout}
-//                 className="bg-red-600 hover:bg-red-700 px-3 py-1 rounded text-sm"
-//               >
-//                 Logout
-//               </button>
-//               <a
-//                 href="https://github.com/yourclientrepo"
-//                 target="_blank"
-//                 rel="noreferrer"
-//                 className="hover:underline"
-//               >
-//                 Join as Developer
-//               </a>
-//             </>
-//           )}
-//         </div>
-//       )}
-//     </nav>
-//   );
-// };
-
-// export default Navbar;
-
-
-
-
-
 
 import { useContext, useEffect, useState } from "react";
 import { FaMoon, FaSun } from "react-icons/fa";
@@ -171,6 +9,7 @@ import { Link, NavLink } from "react-router";
 import { AuthContext } from "../contexts/AuthContext";
 import useUserRole from "../hooks/useUserRole";
 import MicroTaskLogo from "./MicroTaskLogo";
+import LoadingSpinner from "./LoadingSpinner";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -229,7 +68,7 @@ const role=userData?.role
   const navLinks = (
     <>
       <li><NavLink to="/" className={navLinkStyle}><span className='font-bold text-blue-600'>Home</span></NavLink></li>
-      {/* <li><NavLink to="/tasks" className={navLinkStyle}>Tasks</NavLink></li> */}
+      <li><NavLink to="/tasks" className={navLinkStyle}><span className='font-bold text-blue-600'>Tasks</span></NavLink></li>
       {/* {user && <li><NavLink to="/dashboard" className={navLinkStyle}><span className='font-bold text-blue-600'>Dashboard</span></NavLink></li>} */}
 
 {user  && role ==='Worker' && <li><NavLink to="/dashboard/worker-home" className={navLinkStyle}><span className='font-bold text-blue-600'>Dashboard</span></NavLink></li>}
@@ -245,7 +84,7 @@ const role=userData?.role
   );
 
 // if (loading){
-//   return <h1>loading...</h1>
+//   return <LoadingSpinner></LoadingSpinner>
 // }
 
   return (

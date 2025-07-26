@@ -18,6 +18,8 @@ import Withdrawals from "../pages/dashboard/worker/Withdrawals";
 import ManageUsers from "../pages/dashboard/admin/ManageUsers";
 import ManageTasks from "../pages/dashboard/admin/ManageTasks";
 import WithdrawRequests from "../pages/dashboard/admin/WithdrawRequests";
+import Tasks from "../pages/home/Tasks";
+import PrivateRoute from "./PrivateRoute";
 
  export const router = createBrowserRouter([
   {
@@ -36,7 +38,13 @@ import WithdrawRequests from "../pages/dashboard/admin/WithdrawRequests";
         {
             path:'register',
             Component:Register
-        }    
+        } ,
+        {
+          path:'tasks',
+          element:<PrivateRoute>
+            <Tasks></Tasks>
+          </PrivateRoute>
+        }   
 
 ]
 },

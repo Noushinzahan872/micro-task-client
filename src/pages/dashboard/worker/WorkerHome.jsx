@@ -10,17 +10,30 @@ const WorkerHome = () => {
 
   useEffect(() => {
     if (user?.email) {
-      // Load Stats
+      //  Stats
       fetch(`https://micro-task-server-ashen.vercel.app/worker-stats/${user.email}`)
         .then(res => res.json())
         .then(data => setStats(data));
 
       // Load Approved Submissions
-      fetch(`https://micro-task-server-ashen.vercel.app/submissions/worker/${user.email}?status=approved`)
-        .then(res => res.json())
-        .then(data => setApprovedSubmissions(data));
-    }
+  //     fetch(`https://micro-task-server-ashen.vercel.app/submissions/worker/${user.email}?status=approved`)
+  //       .then(res => res.json())
+  //       .then(data => setApprovedSubmissions(data));
+  //   }
+  // }, [user]);
+
+fetch(`https://micro-task-server-ashen.vercel.app/submissions/worker/${user.email}?status=approved`, {
+  headers: {
+    Authorization: `Bearer ${user.accessToken}`,
+  },
+})
+  .then(res => res.json())
+  .then(data => setApprovedSubmissions(data));
+}
   }, [user]);
+
+
+  
 
   return (
     <div className="p-4 max-w-7xl mx-auto">
@@ -44,7 +57,7 @@ const WorkerHome = () => {
 
       {/* Approved Submissions Table */}
       <div>
-        <h3 className="text-xl font-bold mb-4">✅ Approved Submissions</h3>
+        <h3 className="text-xl font-bold mb-4 text-blue-600"> Approved Submissions</h3>
         {approvedSubmissions.length === 0 ? (
           <p className="text-gray-500">No approved submissions found.</p>
         ) : (

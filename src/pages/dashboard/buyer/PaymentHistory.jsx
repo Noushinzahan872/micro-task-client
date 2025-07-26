@@ -13,7 +13,7 @@ const PaymentHistory = () => {
           if (Array.isArray(data)) {
             setPayments(data);
           } else {
-            setPayments([]); // fallback
+            setPayments([]); 
           }
         })
         .catch((err) => console.error("Failed to fetch payments", err));
