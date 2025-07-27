@@ -112,7 +112,7 @@ const role=userData?.role
              <span className="bg-yellow-400 text-black px-3 py-1 rounded-full text-sm font-semibold">
                  💰 {coins} Coins
               </span>
-            {/* Profile Photo */}
+            {/*  Photo */}
             <img
               src={user.photoURL}
               alt="Profile"
