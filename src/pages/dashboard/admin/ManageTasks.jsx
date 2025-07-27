@@ -56,7 +56,8 @@ const ManageTasks = () => {
       <table className="min-w-full border bg-white rounded shadow">
         <thead className="bg-blue-600 text-white">
           <tr>
-            <th className="p-2">Title</th>
+            <th className="p-2">Photo</th>
+            <th>Title</th>
             <th>Buyer</th>
             <th>Workers</th>
             <th>Amount</th>
@@ -68,7 +69,9 @@ const ManageTasks = () => {
           {tasks.length > 0 ? (
             tasks.map((t) => (
               <tr key={t._id} className="text-center border-t hover:bg-blue-50">
-                <td className="py-2 px-4">{t.task_title}</td>
+                <td className="py-2 px-4"><img className="w-10 h-10 rounded-full mx-auto" src={t.task_image_url}></img></td>
+                <td>{t.
+task_title}</td>
                 <td>{t.buyer_email}</td>
                 <td>{t.required_workers}</td>
                 <td>{t.payable_amount}</td>
