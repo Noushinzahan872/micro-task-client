@@ -43,8 +43,6 @@ useEffect(() => {
 }, [user]);
 
 
-
-
   const totalPages = Math.ceil(submissions.length / ITEMS_PER_PAGE);
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
   const currentSubmissions = submissions.slice(startIndex, startIndex + ITEMS_PER_PAGE);
