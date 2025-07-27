@@ -91,7 +91,6 @@ const role=userData?.role
     <div className="navbar bg-blue-300 shadow sticky top-0 z-50">
       {/* Left */}
       <div className="navbar-start hidden lg:block">
-        {/* <Link to="/" className="text-2xl font-bold text-blue-600">MicroTask</Link> */}
       <MicroTaskLogo></MicroTaskLogo>
       </div>
 

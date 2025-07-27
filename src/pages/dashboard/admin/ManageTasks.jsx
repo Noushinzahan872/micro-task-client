@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 const ManageTasks = () => {
   const [tasks, setTasks] = useState([]);
 
-  
+
   const fetchTasks = async () => {
     try {
       const res = await fetch("https://micro-task-server-ashen.vercel.app/admin/tasks");
@@ -19,7 +19,7 @@ const ManageTasks = () => {
     fetchTasks();
   }, []);
 
- 
+
   const handleDelete = async (id) => {
     const confirm = await Swal.fire({
       title: "Are you sure?",
@@ -38,7 +38,7 @@ const ManageTasks = () => {
         const result = await res.json();
         if (res.ok) {
           Swal.fire("Deleted!", result.message, "success");
-          fetchTasks(); 
+          fetchTasks();
         } else {
           Swal.fire("Error", result.message, "error");
         }
@@ -71,7 +71,7 @@ const ManageTasks = () => {
               <tr key={t._id} className="text-center border-t hover:bg-blue-50">
                 <td className="py-2 px-4"><img className="w-10 h-10 rounded-full mx-auto" src={t.task_image_url}></img></td>
                 <td>{t.
-task_title}</td>
+                  task_title}</td>
                 <td>{t.buyer_email}</td>
                 <td>{t.required_workers}</td>
                 <td>{t.payable_amount}</td>
