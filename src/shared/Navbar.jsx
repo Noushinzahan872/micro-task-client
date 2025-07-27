@@ -123,13 +123,14 @@ const role=userData?.role
             <button onClick={handleLogout} className="btn btn-sm bg-pink-400 border-none">
               Logout
             </button>
-            <Link to="/https://github.com/Programming-Hero-Web-Course4/b11a12-client-side-Noushinzahan872" className="btn btn-sm bg-green-500 border-none">Join as</Link>
+            <a href="https://github.com/Programming-Hero-Web-Course4/b11a12-client-side-Noushinzahan872" className="btn btn-sm bg-green-500 border-none">Join as</a>
           </div>
         ) : (
           <>
             <Link to="/login" className="btn btn-sm btn-primary">Login</Link>
             <Link to="/register" className="btn btn-sm btn-primary">Register</Link>
-            <Link to="" className="btn btn-sm bg-green-500 border-none">Join as</Link>
+            <a href="https://github.com/Programming-Hero-Web-Course4/b11a12-client-side-Noushinzahan872" className="btn btn-sm bg-green-500 border-none">Join as</a>
+            
 
           </>
         )}
