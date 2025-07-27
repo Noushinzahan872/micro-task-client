@@ -109,7 +109,7 @@ const AddTask = () => {
 
   return (
     <div className="max-w-3xl mx-auto shadow-md p-6 rounded">
-      <h2 className="text-2xl font-bold mb-4 text-center text-blue-600">Add New Task</h2>
+      <h2 className="text-2xl font-bold mb-4  text-blue-600">Add New Task</h2>
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
         <input {...register("task_title")} placeholder="Task Title" className="input input-bordered w-full" required />
         <textarea {...register("task_detail")} placeholder="Task Detail" className="textarea textarea-bordered w-full" required />

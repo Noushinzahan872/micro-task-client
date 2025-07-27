@@ -91,7 +91,7 @@ useEffect(() => {
 
   return (
     <div className="p-6 max-w-5xl mx-auto">
-      <h1 className="text-3xl font-bold mb-6">My Tasks</h1>
+      <h1 className="text-3xl font-semibold text-blue-600 mb-6">My Tasks</h1>
 
       {tasks.length === 0 ? (
         <p>No tasks found.</p>

@@ -3,8 +3,10 @@ import work from "../../assets/works.jpeg"
 
 const HowItWorks = () => {
   return (
+    
+    <div>
     <div className="py-12 px-4 max-w-7xl mx-auto">
-      <h2 className="text-3xl font-bold text-center mb-10">How It Works?</h2>
+      <h2 className="text-3xl font-bold text-center mb-10 text-blue-600">How It Works?</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         {/* Left Side - Steps */}
         <div className="space-y-10">
@@ -57,6 +59,7 @@ const HowItWorks = () => {
           />
         </div>
       </div>
+    </div>
     </div>
   );
 };

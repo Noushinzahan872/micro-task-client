@@ -10,11 +10,14 @@ const Home = () => {
     return (
         <div>
            <BannerSlider></BannerSlider>
+
+            <div className='w-11/12 mx-auto text-center'>
             <BestWorkers></BestWorkers>
             <TestimonialSection></TestimonialSection>
              <TaskIntro></TaskIntro>
             <ExtraSections></ExtraSections>
             <HowItWorks></HowItWorks>
+            </div>
            
         </div>
     );

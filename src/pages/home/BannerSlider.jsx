@@ -35,7 +35,7 @@ const banners = [
 
 const BannerSlider = () => {
   return (
-    <div className="w-full mt-6 md:mt-10 px-4 sm:px-6 lg:px-8 max-w-screen-xl mx-auto">
+    <div className="w-full px-4 sm:px-6 lg:px-8 max-w-screen-xl mx-auto">
       <Swiper
         modules={[Pagination, Autoplay]}
         spaceBetween={20}

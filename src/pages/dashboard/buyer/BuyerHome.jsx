@@ -104,7 +104,7 @@ const BuyerHome = () => {
 
       {/*  Submissions */}
       <div>
-        <h3 className="text-xl font-bold mb-4">Pending Submissions</h3>
+        <h3 className="text-xl font-bold mb-4 text-blue-600">Pending Submissions</h3>
         {loading ? (
           <LoadingSpinner></LoadingSpinner>
         ) : submissions.length === 0 ? (

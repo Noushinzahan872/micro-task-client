@@ -22,7 +22,7 @@ const PaymentHistory = () => {
 
   return (
     <div className="p-4 md:p-8 max-w-5xl mx-auto">
-      <h2 className="text-2xl font-semibold text-center mb-6">Payment History</h2>
+      <h2 className="text-2xl font-semibold text-blue-600 mb-6">Payment History</h2>
 
       {payments.length === 0 ? (
         <p className="text-center text-gray-500">No payments found.</p>
