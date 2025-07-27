@@ -10,7 +10,7 @@ const Footer = () => {
     return (
         <footer className="px-4 divide-y bg-blue-300 text-gray-800 dark:bg-gray-900 dark:text-gray-100">
             <div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
-                {/* Logo and Title */}
+                {/* Logo  */}
                 <div className="lg:w-1/3">
                     <MicroTaskLogo></MicroTaskLogo>
                 </div>
