@@ -23,6 +23,7 @@ import PrivateRoute from "./PrivateRoute";
 import ErrorPage from "../shared/ErrorPage";
 import About from "../shared/About";
 import Blog from "../shared/Blog";
+import Profile from "../shared/Profile";
 
  export const router = createBrowserRouter([
   {
@@ -52,7 +53,12 @@ import Blog from "../shared/Blog";
         {
           path:'blog',
           element:<Blog></Blog>
-
+        },
+        {
+          path:'profile',
+          element:<PrivateRoute>
+            <Profile></Profile>
+            </PrivateRoute>
         },
         {
           path:"/*",
