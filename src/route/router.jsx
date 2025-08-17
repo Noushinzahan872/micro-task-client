@@ -21,6 +21,8 @@ import WithdrawRequests from "../pages/dashboard/admin/WithdrawRequests";
 import Tasks from "../pages/home/Tasks";
 import PrivateRoute from "./PrivateRoute";
 import ErrorPage from "../shared/ErrorPage";
+import About from "../shared/About";
+import Blog from "../shared/Blog";
 
  export const router = createBrowserRouter([
   {
@@ -42,10 +44,16 @@ import ErrorPage from "../shared/ErrorPage";
         } ,
         {
           path:'tasks',
-          element:<PrivateRoute>
+          element:
             <Tasks></Tasks>
-          </PrivateRoute>
+          
         } ,
+        
+        {
+          path:'blog',
+          element:<Blog></Blog>
+
+        },
         {
           path:"/*",
           Component:ErrorPage

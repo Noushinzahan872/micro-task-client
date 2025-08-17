@@ -5,6 +5,7 @@ import ExtraSections from './ExtraSections';
 import BannerSlider from './BannerSlider';
 import HowItWorks from './HowItWorks';
 import TaskIntro from './TaskIntro';
+import About from '../../shared/About';
 
 const Home = () => {
     return (
@@ -14,6 +15,7 @@ const Home = () => {
             <div className='w-11/12 mx-auto text-center'>
             <BestWorkers></BestWorkers>
             <TestimonialSection></TestimonialSection>
+            <About></About>
              <TaskIntro></TaskIntro>
             <ExtraSections></ExtraSections>
             <HowItWorks></HowItWorks>
