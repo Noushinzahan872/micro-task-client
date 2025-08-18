@@ -24,6 +24,7 @@ import ErrorPage from "../shared/ErrorPage";
 import About from "../shared/About";
 import Blog from "../shared/Blog";
 import Profile from "../shared/Profile";
+import MyProfile from "../shared/MyProfile";
 
  export const router = createBrowserRouter([
   {
@@ -63,7 +64,13 @@ import Profile from "../shared/Profile";
         {
           path:"/*",
           Component:ErrorPage
-        }  
+        } ,
+        {
+          path:'/dashboard/myProfile',
+          element:<PrivateRoute>
+            <MyProfile></MyProfile>
+          </PrivateRoute>
+        } 
 
 ]
 },

@@ -24,29 +24,35 @@ const Sidebar = ({ sidebarOpen, toggleSidebar }) => {
   const menuItems = [
     ...(role === "Worker"
       ? [
+         { name: "My Profile", path: "/dashboard/myProfile", icon: <FaUserShield /> },
           { name: "Home", path: "/dashboard/worker-home", icon: <FaHome /> },
           { name: "Task List", path: "/dashboard/tasks", icon: <FaTasks /> },
           { name: "My Submissions", path: "/dashboard/my-submissions", icon: <FaTasks /> },
           { name: "Withdrawals", path: "/dashboard/withdrawals", icon: <FaCoins /> },
+           
         ]
       : []),
 
     ...(role === "Buyer"
       ? [
+         { name: "My Profile", path: "/dashboard/myProfile", icon: <FaUserShield /> },
           { name: "Home", path: "/dashboard/buyer-home", icon: <FaHome /> },
           { name: "Add New Task", path: "/dashboard/add-task", icon: <FaTasks /> },
           { name: "My Tasks", path: "/dashboard/my-tasks", icon: <FaTasks /> },
           { name: "Purchase Coins", path: "/dashboard/purchase-coins", icon: <FaCoins /> },
           { name: "Payment History", path: "/dashboard/payment-history", icon: <FaTasks /> },
+         
         ]
       : []),
 
     ...(role === "Admin"
       ? [
+         { name: "My Profile", path: "/dashboard/myProfile", icon: <FaUserShield /> },
           { name: "Home", path: "/dashboard/admin-home", icon: <FaHome /> },
           { name: "Manage Users", path: "/dashboard/manage-users", icon: <FaUsers /> },
           { name: "Manage Tasks", path: "/dashboard/manage-tasks", icon: <FaTasks /> },
           { name: "Withdraw Requests", path: "/dashboard/withdraw-requests", icon: <FaUserShield /> },
+          
         ]
       : []),
   ];
